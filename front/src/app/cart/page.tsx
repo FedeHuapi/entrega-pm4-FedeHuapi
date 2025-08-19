@@ -14,7 +14,7 @@ export default function Cart() {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/login'); // Redirige a login si no está autenticado
+      router.push('/login'); // Redirige a login si no está autenticado / logueado
     }
   }, [isAuthenticated, router]);
 
