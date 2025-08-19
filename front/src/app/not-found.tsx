@@ -2,10 +2,20 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
+import { Suspense } from 'react';
 import {  useSearchParams } from 'next/navigation';
 
-
 export default function NotFound() {
+return (
+  <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <Suspense fallback={<div>Cargando...</div>}>
+  <NotFoundContent />
+    </Suspense>
+  </div>
+);
+}
+
+ function NotFoundContent() {
   const { isAuthenticated } = useAuth();
   const searchParams = useSearchParams();
 
